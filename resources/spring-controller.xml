@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+	<context:property-placeholder
+		location="classpath:db.properties,classpath:email.properties" />
+	<!-- 데이터 베이스 -->
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<bean id="dataSource"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${db.driver}" />
+		<property name="jdbcUrl" value="${db.jdbcUrl}" />
+		<property name="user" value="${db.user}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<context:annotation-config />
+	<bean id="mailSender2"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${email.host}" /> <!-- gmail을 사용 -->
+		<property name="port" value="${email.port}" />
+		<property name="username" value="${email.username}" />
+		<property name="password" value="${email.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth">true    </prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="Email" class="library.vo.Email">
+	</bean>
+	<bean id="emailSender" class="library.vo.EmailSender">
+	</bean>
+
+	<!-- 브라우저가 multipart/form-data 데이터로 보내는 파일을 처리하기 위한 MultipartResolver 클래스를 
+		bean으로 등록 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+
+	<!-- 파일업로드 디렉토리 설정 -->
+	<bean id="uploadPath" class="java.lang.String">
+		<constructor-arg value="/resources/img" />
+	</bean>
+	<!-- dao들 -->
+	<!-- 회원 -->
+	<bean id="memberdao" class="library.dao.MemberDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- 관리자 -->
+	<bean id="masterdao" class="library.dao.MasterDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- 책정보 -->
+	<bean id="bookdatedao" class="library.dao.BookDateDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- 희망도서정보 -->
+	<bean id="hopebookdao" class="library.dao.HopebookinginfoDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<bean id="hopeAnswerdao" class="library.dao.HopebookanswerDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- 예약 정보 -->
+	<bean id="bookininfodao" class="library.dao.BookinginfoDAO">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	<!-- 이메일로 전송 -->
+	<!-- <bean id="email" class="library.vo.Email"> </bean> <bean id="emailsender" 
+		class="library.vo.EmailSender"> </bean> -->
+	<!-- 컨트롤러들 -->
+	<!-- 회원가입 컨트롤러 -->
+	<bean class="library.controller.RegistController">
+		<property name="memberRegSvc" ref="memberRegSvc" />
+		<property name="masterRegSvc" ref="masterRegSvc" />
+	</bean>
+	<!-- 메인 컨트롤러 -->
+	<bean class="library.controller.MainPageController">
+		<property name="dao" ref="bookdatedao" />
+	</bean>
+	<!-- 관리자 회원 관리 컨트롤러 -->
+	<bean class="library.controller.ManagerController">
+		<property name="dao" ref="memberdao" />
+		<property name="memberUpdateSvc" ref="memberUpdateSvc" />
+	</bean>
+	<!-- 관리자 책 관리 컨트롤러 -->
+	<bean class="library.controller.MasterBookManagerController">
+		<property name="dao" ref="bookdatedao" />
+		<property name="bookUpdateSvc" ref="bookUpdateSvc" />
+		<property name="bookInsertSvc" ref="bookInsertSvc" />
+	</bean>
+	<!-- 관리자 희망 도서 컨트롤러 -->
+	<bean class="library.controller.MasterHopeListController">
+		<property name="dao" ref="hopebookdao" />
+		<property name="answerdao" ref="hopeAnswerdao" />
+		<property name="answerRegSvc" ref="answerRegSvc" />
+	</bean>
+	<!-- 책 검색 컨트롤러 -->
+	<bean class="library.controller.BookSearchController">
+		<property name="dao" ref="bookdatedao" />
+	</bean>
+	<!-- 책 상세보기 컨트롤러 -->
+	<bean class="library.controller.BookDetailController">
+		<property name="dao" ref="bookdatedao" />
+		<property name="bookinginfodao" ref="bookininfodao" />
+	</bean>
+	<!-- 로그인 컨트롤러 -->
+	<bean class="library.controller.LoginController">
+		<property name="masterInfoSvc" ref="MasterinfoSvc" />
+		<property name="memberInfoSvc" ref="MemberinfoSvc" />
+	</bean>
+	<!-- 로그아웃 컨트롤러 -->
+	<bean class="library.controller.LogoutController" />
+	<!-- 멤버 정보 수정 컨트롤러 -->
+	<bean class="library.controller.MemberUpdateController">
+		<property name="dao" ref="memberdao" />
+		<property name="memberUpdateSvc" ref="memberUpdateSvc" />
+	</bean>
+	<!-- 관리자 정보 수정 컨트롤러 -->
+	<bean class="library.controller.MasterUpdateController">
+		<property name="dao" ref="masterdao" />
+		<property name="masterUpdateSvc" ref="masterUpdateSvc" />
+	</bean>
+	<!-- 탈퇴 컨트롤러 -->
+	<bean class="library.controller.MemberSecessionController">
+		<property name="dao" ref="memberdao" />
+	</bean>
+	<bean class="library.controller.MasterSecessionController">
+		<property name="dao" ref="masterdao" />
+	</bean>
+	<!-- id/pw찾기 컨트롤러 -->
+	<bean class="library.controller.FindIdPwController">
+		<property name="dao" ref="memberdao" />
+	</bean>
+	<!-- 희망 도서 컨트롤러 -->
+	<bean class="library.controller.HopeBookController">
+		<property name="dao" ref="hopebookdao" />
+		<property name="hopeRegSvc" ref="hopeRegSvc" />
+		<property name="answerdao" ref="hopeAnswerdao" />
+	</bean>
+	<!-- 예약 정보 컨트롤러 -->
+	<bean class="library.controller.BookinginfoController">
+		<property name="dao" ref="bookininfodao" />
+		<property name="memberdao" ref="memberdao" />
+		<property name="masterdao" ref="masterdao" />
+		<property name="bookdatedao" ref="bookdatedao" />
+		<property name="bookingSvc" ref="bookingSvc" />
+	</bean>
+	<!-- 예약 리스트 컨트롤러 -->
+	<bean class="library.controller.MasterBookingListController">
+		<property name="dao" ref="bookininfodao" />
+		<property name="memberdao" ref="memberdao" />
+		<property name="bookdatedao" ref="bookdatedao" />
+	</bean>
+	<!-- 서비스들 -->
+	<bean id="memberCheckSvc"
+		class="library.service.MemberCheckServiceImpe">
+		<property name="memberdao" ref="memberdao" />
+	</bean>
+	<bean id="memberRegSvc"
+		class="library.service.MemberRegisterService">
+		<constructor-arg ref="memberdao" />
+	</bean>
+	<bean id="masterRegSvc"
+		class="library.service.MasterRegisterService">
+		<constructor-arg ref="masterdao" />
+	</bean>
+	<bean id="MemberinfoSvc" class="library.service.MemberInfoService">
+		<property name="memberdao" ref="memberdao" />
+	</bean>
+	<bean id="MasterinfoSvc" class="library.service.MasterInfoService">
+		<property name="masterdao" ref="masterdao" />
+	</bean>
+	<bean id="memberUpdateSvc"
+		class="library.service.MemberUpdateService">
+		<constructor-arg name="dao" ref="memberdao" />
+	</bean>
+	<!-- 책 정보 수정 서비스 -->
+	<bean id="bookUpdateSvc" class="library.service.BookUpdateService">
+		<constructor-arg name="dao" ref="bookdatedao" />
+	</bean>
+	<!-- 책 정보 추가 서비스 -->
+	<bean id="bookInsertSvc" class="library.service.BookInsertService">
+		<constructor-arg name="dao" ref="bookdatedao" />
+	</bean>
+	<!-- 희망 도서 신청 서비스 -->
+	<bean id="hopeRegSvc"
+		class="library.service.HopeBookRegistService">
+		<constructor-arg name="dao" ref="hopebookdao" />
+	</bean>
+	<!-- 관리자 정보 수정 서비스 -->
+	<bean id="masterUpdateSvc"
+		class="library.service.MasterUpdateService">
+		<constructor-arg name="dao" ref="masterdao" />
+	</bean>
+	<!-- 관리자 댓글 작성 서비스 -->
+	<bean id="answerRegSvc"
+		class="library.service.AnswerRegistService">
+		<constructor-arg name="dao" ref="hopeAnswerdao" />
+	</bean>
+	<!-- 예약 등록 서비스 -->
+	<bean id="bookingSvc" class="library.service.BookingInfoService">
+		<constructor-arg name="dao" ref="bookininfodao" />
+	</bean>
+</beans>

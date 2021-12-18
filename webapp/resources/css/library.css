@@ -1,0 +1,797 @@
+/*css �넻�빀蹂�*/
+/*�씠css瑜� �궗�슜�븯�뒗 jsp由ъ뒪�듃*/
+/*硫붿씤�럹�씠吏�*/
+/*-----------�뿤�뜑---------------*/
+.mainbody {/*body*//*mainpage*/
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    font-family: 'Alatsi';
+    background-color: rgb(255, 183, 50);
+    background-image: url("../img/namu.jpg");
+    image-rendering: pixelated;
+   
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  .mainheader{/*header*//*mainpage*/
+    position: relative;
+    width: 1500px;
+    height: 350px;
+    transform: translate(13.2%,0%);
+    
+}
+  
+  .bg-image {/*bg-image*//*mainpage*/
+    /* �궗�슜�븷 �씠誘몄� */
+    background-image: url("../img/Libraryheader.jpg");
+    
+    /* 諛깃렇�씪�슫�뱶 �궗吏� �쓲由쇰룄 */
+    filter: blur(8px);
+    -webkit-filter: blur(3px);
+    
+    /* 諛깃렇�씪�슫�뱶 �궗吏� �겕湲� */
+    height: 85%; 
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 4px solid white;
+
+    
+  }
+  
+  /* �뀓�뒪�듃 �긽�옄*/
+  .bg-text {/*bg-text*//*mainpage*/
+    background-color: rgba(70, 70, 70, 0.8); /* Black w/opacity/see-through */
+    color: goldenrod;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    height: 50%;
+    width: 85%;
+    padding: 40px;
+    text-align: center;
+  }
+  .bg-text h1{/*.bg-text h1*/
+      margin-top: -5px;
+  }
+  .bg-text h2{/*.bg-text h2*/
+      margin-top: -5px;
+  }
+  
+
+  /*----------------------------------------------------------------------*/
+  /*�룄�꽌 寃��깋 李� */
+  .dborder{/*div-border*//*mainpage*/
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 3px solid rgb(44, 214, 214);
+    border-radius: 30px;
+    background-color: white;
+    width: 72%;
+    left: 15%;
+    display: flex;
+    padding: 2px;
+
+  }
+ .hdinput{/*header div input*//*mainpage*/
+                               /*寃��깋李� 湲몄씠*/
+    width: 500px;
+    border:none;
+    
+}
+.hdbutton{/*header div button*/  /*mainpage*/
+                              /*寃��깋 踰꾪듉 湲몄씠*/
+    width: 50px;
+    
+    
+}
+.search-flex{/*search-flex*//*mainpage*/                       /* 寃��깋 李�*/
+    display: flex;
+    height: 50px;
+    align-self: right;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 10px;
+    
+}
+.label1{/*label1*//*mainpage*//*�룄�꽌寃��깋 */
+   width: 136px;
+    height: 50px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 14px;
+    background: rgb(54, 80, 16);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 18px 0 0 18px;
+    margin-left: 5px;
+}
+.label2{/*label1*//*mainpage*//*���옄 寃��깋*/
+  width: 136px;
+    height: 50px;
+    line-height: 35px;
+    color: #fff;
+    font-size: 14px;
+    background: rgb(45, 47, 149);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    padding: 8px;
+    margin-left: -1px;
+    border-radius: 0 18px 18px 0;
+}
+ .ipty{/*input[type=radio]*//*mainpage*//*�룄�꽌寃��깋, ���옄寃��깋 �겢由� 踰꾪듉*/
+    display: inline-block;
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: -5px;
+    margin-top: -3.5px;
+    
+}
+
+/*------------------------------------------------------------------------*/
+/*硫붿씤 */
+.middlemain{/*main*//*mainpage*/
+  position: absolute;
+  width: 1500px;
+  height: 520px;
+  left: 198px;
+  background-color: white;
+  border: 4px solid rgb(96 67 13);
+  background-color: rgb(233 255 255/80%);
+  border-radius: 10px;
+  margin-top: -50px;
+  padding-bottom: 20px;
+  box-shadow: 0 30px 50px 0 rgb(0 0 0 / 90%), 0 8px 40px 0 rgb(0 0 0 / 90%);
+  
+
+
+  
+}
+/*---------------------------------------------------------------------------*/
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin-left: 350px;
+    margin-top: 20px;
+    border: 6px solid rgb(161, 161, 161);
+    border-style: outset;
+    margin-bottom: -15px;
+    box-shadow: 0 8px 40px 0 rgb(0 0 0 / 20%), 0 8px 40px 0 rgb(0 0 0 / 40%);
+}
+
+/* Caption text */
+.text {/*text *//*mainpage*/
+  color: rgb(15, 92, 235);
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  
+}
+
+
+/* The dots/bullets/indicators */
+.dot {/*mainpage*/
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.abc{/*mainpage*/
+  
+}
+
+.active {/*mainpage*/
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {/*mainpage*/
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {/*mainpage*/
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {/*mainpage*/
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {/*mainpage*/
+  .text {font-size: 11px}
+}
+/*-------------------------------------------------------------------*/
+/*�삤瑜몄そ 濡쒓렇�씤 fixed*/
+.table1{/*mainpage*/
+  position: fixed;
+  left: 82%;
+  top: 40%;
+  width: 100px;
+  height: 300px;
+  border-collapse: collapse;
+  background-color: rgb(204 238 239);
+  border: 3px solid rgb(204 238 239);
+  border-style: ridge;
+
+}
+/*------------------------------------------------------------------*/
+/*硫붿씤 �븯�떒 �룄�꽌 異붿쿇 由ъ뒪�듃 */
+.ttable2{/*mainpage*/
+  position: relative;
+  border-collapse: collapse;
+  left: 350px;
+  top: 20px;
+  box-shadow: 0 8px 40px 0 rgb(0 0 0 / 20%), 0 8px 40px 0 rgb(0 0 0 / 40%);
+  
+}
+.att{/*aside table th*//*mainpage*/
+  border: 3px groove black;
+}
+.tthh{/*mainpage*/
+  border: 3px groove black;
+  position: relative;
+  width: 200px;
+  height: 160px;
+  background-color: rgb(194, 241, 243);
+  
+}
+.ttss{/*mainpage*/
+  border: 3px groove black;
+  position: relative;
+  width: 600px;
+  height: 160px;
+  background-color: wheat;
+  
+}
+.abcd {
+    margin-top: 50px;
+    background-color: rgb(233 255 255/80%);
+    position: relative;
+    height: auto;
+    padding-bottom: 50px;
+    border: 4px solid rgb(96 67 13);
+    border-radius: 10px;
+    box-shadow: 0 30px 50px 0 rgb(0 0 0 / 90%), 0 8px 40px 0 rgb(0 0 0 / 90%);
+}
+/*�씠 css瑜� �씠�슜�븯�뒗 jsp 由ъ뒪�듃
+  1.Add book page                                            /�룄�꽌 異붽� �럹�씠吏�
+  2.Book revision page                                       /�룄�꽌 �닔�젙 �럹�씠吏�
+  3.Administrator membership information modification page   /愿�由ъ옄 �쉶�썝 �젙蹂� �닔�젙 �럹�씠吏�
+*/
+.Abody{ /*body*/
+    font-family: 'Alatsi';
+    width: 1920px;
+    height: auto;
+    background-color: rgb(180, 243, 214);
+
+}
+.Adiv{/*div1*/
+    width: 1000px;
+    height: auto;
+    border : 3px solid black;
+    border-radius: 30px;
+    position: relative;
+    left: 460px;
+    right: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.ATinput, .Aselect, .Atextarea {/*input[type=text], select, textarea*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .ASinput{/*input[type=submit]*/
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ 
+  .AFinput{/*input[type=file]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .ADinput{/*input[type=date]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .ATinput{/*input[type=tel]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .AEinput{/*.input[type=email]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .ANinput{/*input[type=number]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .AEinput{/*input[type=email]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .AIinput[type=image]{/*input[type=image]*/
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .Acontainer {/*.container*/
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 30px;
+  }
+  /*-------------------------------------------------------------------*/
+/*�씠 css瑜� �씠�슜�븯�뒗 jsp 由ъ뒪�듃
+    1.Member information management page / �쉶�썝 �젙蹂� 愿�由� �럹�씠吏�
+    2.Book managerment page              / �룄�꽌 愿�由� �럹�씠吏�
+    3.managerment page                   / 愿�由ъ옄 �럹�씠吏�
+*/
+.Bbody {/*body*/
+    font-family: 'Alatsi';
+    width: 1920px;
+    height: auto;
+    background-color: rgb(180, 243, 214);
+    position: relative;
+
+}
+.Bdiv{/*div1*/
+    width: 1000px;
+    height: auto;
+    border : 3px solid black;
+    border-radius: 30px;
+    position: relative;
+    left: 460px;
+    right: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.Bdiv_1{/*div1_1*/
+    width: 92%;
+    height: auto;
+}
+.BTT{/*thead tr*/
+    background-color: rgb(212, 212, 169);
+}
+.BTHTT{/*thead tr th*/
+    font-size: 17px;
+}
+.BTBTT{/*tbody tr th*/
+    font-size: 14px;
+}
+.Btable{/*table*/
+
+    width: 790px;
+    border-collapse: collapse;
+    border: 2px solid rgb(102, 102, 102);
+    margin-bottom: 20px;
+    position: relative;
+    left: 62px;
+}
+tr,th {/*tr.th*/
+border:1px solid rgb(104, 102, 102);
+padding: 9px;
+}
+.Bcaption{/*caption*/
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.Bbutton {/*button*/
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 20px 40px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+
+}
+.Bbutton1{background-color: #f44336;}/*button1*/
+.Bdiv2{/*div2*/
+    position: relative;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+.Bdiv2div2{
+	margin-top: -100px;
+}
+.Binput{/*input*/
+    margin-right: 15px;
+}
+/*-----------------------------------------------------------------*/
+/*�룄�꽌 �젙蹂� 寃��깋 �럹�씠吏�*/
+.Bfieldset {
+    height: auto;
+    width: 1200px;
+    transform: translate(13%,0%);
+    position: relative;
+    background-color: wheat;
+    margin-top: 20px;
+    box-shadow: 0 8px 40px 0 rgb(0 0 0 / 20%), 0 8px 40px 0 rgb(0 0 0 / 40%);
+    border: 2px solid white;
+    border-radius: 10px
+}
+.Bui{
+  margin: 50px;
+}
+.Bli{
+  padding: 60px 20px;/*�젙蹂� 寃��깋 �썑 �굹�삤�뒗 �룄�꽌 紐⑸줉 �궗�씠利� */
+  border-bottom: 2.5px solid rgb(68, 68, 68);
+  position: inherit;
+  
+}
+
+.Babcd {
+    margin-top: -50px;
+    background-color: rgb(233 255 255/80%);
+    position: relative;
+    width: 1500px;
+    height: auto;
+    left: 200px;
+    padding-bottom: 100px;
+    box-shadow: 0 30px 50px 0 rgb(0 0 0 / 90%), 0 8px 40px 0 rgb(0 0 0 / 90%);
+    border: 4px solid rgb(96 67 13);
+    border-radius: 10px;
+}
+
+.Bbook{
+  box-sizing: border-box;
+  width: 150px;
+  height: 180px;
+  border: 2px solid black;
+  box-align: start;
+  
+
+}
+.Bcontent{
+  box-sizing: border-box;
+  width: 680px;
+  height: 180px;
+  border: 1px solid black;
+  transform: translate(25%,-100%);
+  margin-bottom: -200px;
+  border-radius: 10px;
+ 
+  
+}
+.Bimg{
+  image-rendering: 150px 180px;
+}
+/*----------------------------------------------------------------------*/
+/*�룄�꽌 �긽�꽭 �젙蹂� �럹�씠吏�*/
+.Cdiv{
+  position: absolute;
+  height: 1200px;
+  width: 1200px;
+  background-color: rgb(233 255 255);;
+  transform: translate(27%,0%);
+  border: 4px solid white;
+  box-shadow: 0 30px 50px 0 rgb(0 0 0 / 90%), 0 8px 40px 0 rgb(0 0 0 / 90%);
+  border-radius: 10px;
+  
+}
+.CAdiv{
+  position: absolute;
+  height: 300px;
+  width: 1000px;
+  transform: translate(10%,0%);
+  background-color: wheat;
+  border: 3px solid white;
+  margin-top: 150px;
+  box-shadow: 0 8px 40px 0 rgb(0 0 0 / 20%), 0 8px 40px 0 rgb(0 0 0 / 20%);
+  border-radius: 10px;
+}
+.CBdiv{
+  position: absolute;
+  height: 600px;
+  width: 1000px;
+  transform: translate(10%,80%);
+  background-color: wheat;
+  border: 3px solid white;
+  margin-top: 20px;
+  box-shadow: 0 8px 40px 0 rgb(0 0 0 / 20%), 0 8px 40px 0 rgb(0 0 0 / 20%);
+  border-radius: 10px;
+}
+.CCdiv{
+  box-sizing: border-box;
+  width: 180px;
+  height: 240px;
+  border: 2px solid black;
+  margin: 25px;
+}
+.CEdiv{
+  box-sizing: border-box;
+  width: 700px;
+  height: 240px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 25px;
+  transform: translate(30%,-111%);
+  background-color: white;
+}
+/*------------------------------------------------------------------*/
+/*濡쒓렇�씤*/
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  position:absolute;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 250px;
+  height: 850px;
+}
+
+/* 濡쒓렇�씤,�쉶�썝媛��엯,�븘�씠�뵒 李얘린,鍮꾨�踰덊샇 李얘린*/
+.EBdiv{
+  position: absolute;
+  width: 600px;
+  height: 850px;
+  left: 700px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  background-color: rgb(216, 215, 215);
+}
+/*----------------------------------------------------------*/
+/*�씪諛� �쉶�썝 �젙蹂� �닔�젙 �럹�씠吏�*/
+.EAdiv{
+  position: absolute;
+  height: 1000px;
+  width: 800px;
+  transform: translate(65%,0%);
+  border: 4px solid black;
+  border-radius: 20px;
+  background-color: rgb(232 206 158 / 85%);
+
+}
+/*--------------------------------------------------------*/
+
+/*�씗留� �룄�꽌 �떊泥� �럹�씠吏�*/
+.FAdiv{
+  position: relative;
+  height: auto;
+  width: 1000px;
+  left: 450px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  background-color: honeydew;
+  padding-bottom: 20px;
+}
+.FBdiv{
+  position: relative;
+  height: 450px;
+  width: 980px;
+  border: 2px solid gray;
+  border-radius: 15px;
+  background-color: mediumaquamarine;
+  left: 8px;
+  top: 8px;
+}
+.FCdiv{
+  position: relative;
+  height: auto;
+  width: 980px;
+  border: 2px solid gray;
+  border-radius: 15px;
+  background-color: rgb(172, 200, 115);
+  left: 8px;
+  top: 10px;
+
+}
+.FDdiv{
+  position: relative;
+  height: 160px;
+  width: 950px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background-color: white;
+  left: 15px;
+  margin: 5px;
+  margin-left: -5px;
+
+}
+.FEdiv{
+  position: relative;
+  height: 160px;
+  width: 340px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background-color: white;
+  left: 650px;
+  margin: 5px;
+  display: table;
+  transform: translate(-10%,-103%);
+  
+
+}
+.FFdiv{
+  position: relative;
+  height: 35px;
+  width: 950px ;
+  border:1px solid gray;
+  border-radius: 20px;
+  background-color: rgb(255, 204, 204);
+  left: 10px;
+
+}
+.FGdiv{
+  position: relative;
+  height: 20px;
+  width: 180px;
+  left: 50px;
+  margin: auto;
+  transform: translate(-30%,0%);
+  font-size: larger;
+  
+  
+
+}
+.FHdiv{
+  position: relative;
+  height: 20px;
+  width: 180px;
+  left: 300px;
+  margin: auto;
+  transform: translate(20%,-94%);
+  font-size: larger;
+
+}
+.mainpageimg{
+	object-fit:fill;
+	height: 240px;
+    width: 180px;
+}
+.bisppageimg{
+	object-fit:fill;
+	height: 175.5px;
+    width: 147px;
+}
+.bdppageimg{
+	object-fit:fill;
+	height: 236.5px;
+    width: 176px;
+}
+.Bhopelist{
+	margin-top:20px;
+	transform: translate(7%,0%);
+	width: 850px;
+    border-collapse: collapse;
+    border: 2px solid rgb(102, 102, 102);
+    margin-bottom: 20px;
+	
+}
+.Bpage{
+	margin-top: -50px;
+	transform: translate(45%, 0%);
+}
+.Tlogin{
+	background-color:rgb(232 206 158 / 85%);
+	height: 800px;
+	width: 800px;
+	position: relative;
+	border: 3px solid gray;
+	border-radius:10px;
+	left: 500px;
+	padding-top: 50px;
+}
+.ASinputred{
+	background-color: red;
+}
+.TTlogin{
+	background-color:rgb(232 206 158 / 85%);
+	height: 1000px;
+	width: 800px;
+	position: relative;
+	border: 3px solid gray;
+	border-radius:10px;
+	left: 500px;
+	padding-top: 50px;
+}
+.Cpage{
+	margin-top: 50px;
+	transform: translate(40%, 0%);
+}
+.Bdivdiv{
+	padding-bottom: 120px;
+	
+}
+.Th1{
+	position: relative;
+	left:300px;
+}
+
