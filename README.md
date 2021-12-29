@@ -30,7 +30,8 @@ spring, maven, jdbc, oracle, java8
 
 # 화면 설계 - 프로토타입
 회원 프로토타입
-![main](https://user-images.githubusercontent.com/75685520/147653437-948048f5-b21d-476b-849c-c6e8cabc3143.jpg)
+
+<img src="https://user-images.githubusercontent.com/75685520/147653437-948048f5-b21d-476b-849c-c6e8cabc3143.jpg" width="30%" height="50%">
 ![search2_result](https://user-images.githubusercontent.com/75685520/147653455-44b25277-852c-4c3a-92d1-f2f83b9e2696.jpg)
 
 관리자 프로토타입
