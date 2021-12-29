@@ -33,5 +33,6 @@ spring, maven, jdbc, oracle, java8
 
 <img src="https://user-images.githubusercontent.com/75685520/147653437-948048f5-b21d-476b-849c-c6e8cabc3143.jpg" width="30%" height="30%">
 <img src="https://user-images.githubusercontent.com/75685520/147653455-44b25277-852c-4c3a-92d1-f2f83b9e2696.jpg" width="30%" height="40%">
+![search2_result](https://user-images.githubusercontent.com/75685520/147654057-f64aa30e-3eee-44be-8dfb-69e71de4cb56.jpg)
 
 관리자 프로토타입
