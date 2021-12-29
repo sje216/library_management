@@ -29,3 +29,7 @@ spring, maven, jdbc, oracle, java8
 ![image](https://user-images.githubusercontent.com/75685520/147651907-801d16b7-9bcb-4311-8579-f8f06ae0033f.png)
 
 # 화면 설계 - 프로토타입
+회원 프로토타입
+
+
+관리자 프로토타입
