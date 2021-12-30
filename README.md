@@ -7,7 +7,7 @@
 기존 도서관의 웹사이트들을 벤치마킹하여 도서 정보를 제공하고 사용자에게 필요한 기능을 가진 사이트를 만들고자 합니다.
 
 # 사용기술 및 환경
-spring, maven, jdbc, oracle, java8
+java,spring, maven, jdbc, oracle, java8,html5,css3,java script
 
 # 요구사항 작성
 아이디와 비밀번호를 기반으로 로그인 기능을 구현하며, 회원은 일반 회원과 관리자 2가지로 한다.
